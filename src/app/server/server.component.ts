@@ -9,6 +9,7 @@ export class ServerComponent {
     serverId: number = 10;
     serverStatus: string = "offline";
     allowNewServer = false;
+    serverCreationStatus = "The Server is not yet created!";
 
     getServerStatus() {
         return this.serverStatus;
@@ -18,4 +19,8 @@ export class ServerComponent {
         setTimeout(() => {this.allowNewServer = true}, 2000);
     }
 
+    createNewServer() {
+        return this.serverCreationStatus = "Server Created Successfully!";
+    }
+    
 }
