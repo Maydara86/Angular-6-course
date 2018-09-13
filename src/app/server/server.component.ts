@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class ServerComponent {
     serverId: number = 10;
     serverStatus: string = "offline";
-    allowNewServer = false;
+    allowNewServer = true;
     serverCreationStatus = "The Server is not yet created!";
     serverName: string = "";
     serverCreated: boolean = false;
@@ -17,8 +17,15 @@ export class ServerComponent {
         return this.serverStatus;
     }
 
+    getColor() {
+        if(this.serverStatus === "online") {
+            return "green"
+        }
+        return "red";
+    }
+
     constructor() {
-        setTimeout(() => {this.allowNewServer = true}, 2000);
+        this.serverStatus = Math.random() < 0.5 ? "offline" : "online"; 
     }
 
     createNewServer() {
