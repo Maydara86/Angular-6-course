@@ -11,6 +11,7 @@ export class ServerComponent {
     allowNewServer = false;
     serverCreationStatus = "The Server is not yet created!";
     serverName: string = "";
+    serverCreated: boolean = false;
 
     getServerStatus() {
         return this.serverStatus;
@@ -21,6 +22,7 @@ export class ServerComponent {
     }
 
     createNewServer() {
+        this.serverCreated = true;
         return this.serverCreationStatus = "Server Created Successfully! Name is " + this.serverName;
     }
 
